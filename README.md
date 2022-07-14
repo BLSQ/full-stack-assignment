@@ -4,23 +4,23 @@ This repo contains the instruction for the completion of the **Full stack develo
 
 This assignment takes the form of a **small realistic project**, to be developed as a little **single-page app**.
 
-It will be used to assess the candidate skill levels, and also their ability to work with modern development tool and 
+It will be used to assess your skill levels, and also your ability to work with modern development tool and 
 practices, such as Git/Github, Docker, etc...
 
 **We expect you to dedicate between 3-4 hours of work to this exercise**. It's ok if not everything is perfect or 100% 
-finished, the idea is not to spend a lot of time on this but rather what you can come up with in a few hours.
+finished, the idea is not to spend a lot of time on this but rather to see what you can build in a few hours.
 
 ## The project: a release checklist
 
-The goal of this small assignment is to build a very small but fully functioning modern web application.
+The goal of this small assignment is to build a very small functional modern web application.
 
-This application is a release checklist tool that could help developers with their release process.
+This application is a **release checklist tool** that could help developers with their release process.
 
-![alt text](https://github.com/BLSQ/full-stack-assignment/blob/main/releasecheck.png?raw=true)
+![alt text](https://github.com/BLSQ/full-stack-assignment/blob/main/wireframes/releasecheck.png?raw=true)
 
-You can findThe above mock-ups in the `wireframes` directory of this repository.
+You can find the above mock-ups in the `/wireframes` directory of this repository.
 
-The application has only one main model: the `Release`. A `Release` is composed of multiple `Step`s and has the 
+The application has only one main model : `Release`. A `Release` is composed of multiple `Step`s and has the 
 following properties :
 
 - A name (`text`, mandatory)
@@ -28,7 +28,7 @@ following properties :
 - A status (`planned|ongoing|done`, auto)
 - Additional info (`text`, optional)
 
-A release keeps track of the state of the different steps (either `true` or `false`).
+A release keeps track of the completion state of the different steps. A `Step` has only two states : on or off.
 
 The `status` is not chosen by the end user, it is simply computed from the steps state :
 
@@ -36,15 +36,11 @@ The `status` is not chosen by the end user, it is simply computed from the steps
 - At least one step completed : `ongoing`
 - All steps completed : `done`
 
-For the sake of this example, let's assume that a release is done in 7 steps
+For the sake of this example, let's assume that a release is done in 7 to 10 steps. The mock-ups include few 
+example steps but feel free to change them. 
 
-1. Check that all relevant GitHub pull requests have been merged
-2. Make sure that the CHANGELOG.md files in each relevant repository have been updated for the release
-3. All tests are passing
-4. Creating releases in the different GitHub repositories used by the project
-5. Deploy the release to the demo or staging environment
-6. Manually test each feature / bug fix that is part of the release
-7. Deploy the release to production
+To keep things simple, the steps are the same for every release and don't change over time - you don't need to 
+have a database table to store each step, as long as you store, for each release, which step has been completed.
 
 ## Running the code
 
@@ -63,33 +59,34 @@ In terms of features :
 
 In terms of technical constraints :
 
-- [ ] The whole codebase should be contained in a single repository
+- [ ] The whole codebase should be contained in a single repository, which should be a fork of this repository
 - [ ] The end result should be a single-page application
-- [ ] `React` should be used for the frontend, and `Python` for the backend (ideally Django)
+- [ ] `React` should be used for the frontend, either with `create-react-app` or `nextjs`
+- [ ] `Python` should be used for the backend (ideally with `Django` but `Flask` or `FastAPI` are ok too)
 - [ ] The application state should be stored in a `PostgreSQL` or `MySQL` database
 - [ ] The frontend and the backend should communicate using an API
-- [ ] No advanced graphic design is needed, but there should be a decent UX with a few well-thought CSS rules
+- [ ] The app is styled with a few CSS rules, and should have a simple, usable UX (no time for fancy design stuff)
 - [ ] There should be a small `README.md` file with the instructions needed to run the code locally
 
 **Please note that this shouldn't be a multi-user application**. It does not need any kind of user management.
 
-### Nice-to-have :
+### Nice-to-have (if you have the time)
 
 In terms of features :
 
 - [ ] Users could be able to delete a release
-- [ ] Users could benefit from a responsive 
+- [ ] Users could benefit from a responsive interface
 
 Regarding the tech :
 
 - [ ] The frontend and backend could use `GraphQL` as the API layer
-- [ ] The backend can be easily run with `Docker` (`Dockerfile` + `docker-compose.yaml`)
-- [ ] The codebase contain a couple of automated tests
-
+- [ ] The backend could be easily run locally with `Docker` (`Dockerfile` + `docker-compose.yaml`)
+- [ ] The codebase could contain a couple of automated tests
 
 ## Where to start :
 
 1. Fork this repository
-2. Write the project code (3-4 hours)
-3. Update this `README.md` file with installation instructions (see "Running the code" above)
-4. That's it - we'll review your work together once you are done
+1. Write the project code (3-4 hours)
+1. Commit & push your code every now and then - we expect to see a reasonable amount of commits
+1. Update this `README.md` file with installation instructions (see "Running the code" above)
+1. That's it - we'll review your work together once you are done
