@@ -59,7 +59,8 @@ In terms of features :
 
 In terms of technical constraints :
 
-- [ ] The whole codebase should be contained in a single repository, which should be a fork of this repository
+- [ ] The whole codebase should be contained in a single repository available on GitHub, which should be a fork 
+      of this repository
 - [ ] The end result should be a single-page application
 - [ ] `React` should be used for the frontend, either with `create-react-app` or `nextjs`
 - [ ] `Python` should be used for the backend (ideally with `Django` but `Flask` or `FastAPI` are ok too)
